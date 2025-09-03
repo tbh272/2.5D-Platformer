@@ -1,0 +1,11 @@
+2.5D Platformer Project Template
+
+This project is a 2.5D platformer game. It is free to use, modify, remove, or add content as desired. 
+Feel free to adapt or expand upon it for personal or commercial purposes without restriction.
+
+The Adventurer Male Spritesheet - https://sscary.itch.io/the-adventurer-male
+	- Used for sprite character 
+Action Adventure Series Ep 3 - https://playableworkshop.com/videos/action-adventure-series-ep-3
+	- Used for test level object 
+Coding:
+	- all me
