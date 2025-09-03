@@ -516,10 +516,14 @@ autoplay = "idle_up"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.647924, 0)
 shape = SubResource("CapsuleShape3D_o28un")
 
-[node name="SpringArm3D" type="SpringArm3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2047, 0)
+[node name="SpringArm3D" type="SpringArm3D" parent="." node_paths=PackedStringArray("target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7, 0)
 shape = SubResource("SphereShape3D_4ntmi")
 script = ExtResource("4_gwnis")
+target = NodePath("..")
+min_length = 5.0
+max_length = 7.0
+offset = Vector3(0, 2.7, 0)
 
 [node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
-transform = Transform3D(1, 0, 0, 0, 0.955552, 0.294824, 0, -0.294824, 0.955552, 0, 1.23312, 3.56842)
+transform = Transform3D(1, 0, 0, 0, 0.955552, 0.294824, 0, -0.294824, 0.955552, 0, 0, 0)

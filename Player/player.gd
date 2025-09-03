@@ -3,7 +3,7 @@ extends CharacterBody3D
 @onready var animated_sprite: AnimatedSprite3D = $Sprite
 @onready var camera: Camera3D = $SpringArm3D/Camera3D
 
-const SPEED: float = 5.0
+const SPEED: float = 7.0
 const JUMP_VELOCITY: float = 4.5
 const DIRECTION_LOCK_TIME: float = 0.1  # Prevent animation jitter
 
@@ -12,7 +12,7 @@ var last_move_dir: Vector3 = Vector3.FORWARD  # Default for idle
 var last_dir_index: int = 2  # Default to 'up' (index 2)
 var direction_lock_timer: float = 0.0  # Timer to lock direction
 
-# Animation direction names (4 directions, left uses right with flip)
+# Animation direction names (4 directions)
 var direction_names: Array[String] = ["down", "right", "up", "left"]
 
 func _physics_process(delta: float) -> void:
@@ -20,9 +20,9 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
-	# Handle jump
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+	## Handle Jump uncomment below if you want to enable feature
+	#if Input.is_action_just_pressed("ui_accept") and is_on_floor(): 
+		#velocity.y = JUMP_VELOCITY
 
 	# Get input vector
 	var input_dir: Vector2 = Input.get_vector("walk_left", "walk_right", "walk_forward", "walk_backward")
@@ -93,23 +93,19 @@ func update_animation() -> void:
 	if direction_lock_timer <= 0.0 or abs(dir_index - last_dir_index) > 1:
 		last_dir_index = dir_index
 		direction_lock_timer = DIRECTION_LOCK_TIME
-
+	
 	# Handle sprite flip for left-facing direction
 	var flip_h: bool = dir_index == 1  # Flip for left
 	var anim_name: String = direction_names[dir_index]
 	if dir_index == 3:  # Use right animation for left with flip
 		anim_name = "right"
-
+	
 	# Apply walk or idle prefix
 	anim_name = ("walk_" if is_moving else "idle_") + anim_name
-
-	# Debug print to verify animation and flip
-	if animated_sprite.animation != anim_name or animated_sprite.flip_h != flip_h:
-		print("Playing: ", anim_name, " flip_h: ", flip_h, " dir_index: ", dir_index, " angle: ", angle, " cross: ", cross)
-
+	
 	# Play animation if changed
 	if animated_sprite.animation != anim_name:
 		animated_sprite.play(anim_name)
-
+	
 	# Apply flip
 	animated_sprite.flip_h = flip_h
