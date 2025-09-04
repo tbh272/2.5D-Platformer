@@ -10,9 +10,9 @@ This 2.5D platformer is in its early stages but includes:
 
 - 🏃‍♂️ **Basic Movement**: Simple player controls for running and jumping in a 2.5D environment.
 - 🎨 **Placeholder Assets**: Using assets like the Adventurer Male sprite for the character and a test level object to set up the scene.
-- 📜 **Minimal UI**: A basic main menu to get started, with plans to expand it.
+- 📜 **Minimal UI**: A basic main menu, and settings page to get started, with plans to expand it.
 
-Right now, it’s super basic, but I’m planning to add features from my other projects, like advanced state machines, combat systems, and polished menus, to make it as robust and fun as my 3D platformer! 🚀
+Right now, it’s super basic, but I’m planning to add features from my other projects, like advanced state machines, polished menus, to make it as robust and fun as my 3D platformer! 🚀
 
 ---
 
@@ -45,5 +45,3 @@ I’m learning Godot, and this 2.5D platformer is my sandbox for experimenting w
   - Coding - Created by me.
 
 This project is a learning journey, and I’m excited to keep building it out with features like those in my 3D platformer (combat, menus, audio, etc.). If you’re new to Godot, dive in and experiment. If you’re experienced, I hope this gives you a quick starting point. Either way, **have fun** and make something awesome! 🎉
-
-Happy coding, and let’s keep creating! 💻
