@@ -1,0 +1,91 @@
+[gd_scene load_steps=6 format=3 uid="uid://b1p45qdmc4vgc"]
+
+[ext_resource type="Script" uid="uid://b81wxa4pq7hk2" path="res://Scenes/Menus/MainMenu/main_menu.gd" id="1_tb3ri"]
+[ext_resource type="Theme" uid="uid://l702hn4avr7u" path="res://Scenes/Menus/menus_theme.tres" id="1_yo6co"]
+[ext_resource type="PackedScene" uid="uid://t5xm64l0epeh" path="res://Scenes/world.tscn" id="2_fy1kh"]
+[ext_resource type="PackedScene" uid="uid://dwtv5lue5tjp2" path="res://Scenes/Menus/SettingsMenu/settings_menu.tscn" id="4_gphap"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yo6co"]
+font_size = 56
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tb3ri")
+next_level_scene = ExtResource("2_fy1kh")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -164.0
+offset_top = 103.0
+offset_right = 164.0
+offset_bottom = 164.0
+grow_horizontal = 2
+text = "2.5D Platformer Tempalte"
+label_settings = SubResource("LabelSettings_yo6co")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.0
+offset_top = -50.0
+offset_right = 79.0
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_yo6co")
+text = "Play"
+
+[node name="SettingsButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_yo6co")
+text = "Settings"
+
+[node name="QuitButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_yo6co")
+text = "Quit"
+
+[node name="SettingsMenu" parent="." instance=ExtResource("4_gphap")]
+visible = false
+layout_mode = 1
+
+[node name="BackButton" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 138.0
+offset_top = -50.0
+offset_right = 260.0
+offset_bottom = -19.0
+grow_vertical = 0
+text = "Back"
+
+[connection signal="pressed" from="Panel/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

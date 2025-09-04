@@ -1,0 +1,194 @@
+[gd_scene format=3 uid="uid://dwtv5lue5tjp2"]
+
+[node name="SettingsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.117188
+anchor_top = 0.095679
+anchor_right = 0.882813
+anchor_bottom = 0.904321
+grow_horizontal = 2
+grow_vertical = 2
+tab_alignment = 1
+current_tab = 0
+metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Graphics" type="TabBar" parent="Panel/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="GraphicsTab" type="VBoxContainer" parent="Panel/TabContainer/Graphics"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 11.0
+offset_right = -19.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Resolution" type="HBoxContainer" parent="Panel/TabContainer/Graphics/GraphicsTab"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="Panel/TabContainer/Graphics/GraphicsTab/Resolution"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Resolution:"
+
+[node name="Seperator" type="HSeparator" parent="Panel/TabContainer/Graphics/GraphicsTab/Resolution"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="OptionButton" type="OptionButton" parent="Panel/TabContainer/Graphics/GraphicsTab/Resolution"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+selected = 0
+item_count = 1
+popup/item_0/text = "1920x1080"
+popup/item_0/id = 0
+
+[node name="ScreenMode" type="HBoxContainer" parent="Panel/TabContainer/Graphics/GraphicsTab"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/TabContainer/Graphics/GraphicsTab/ScreenMode"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Screen Mode:"
+
+[node name="Seperator" type="HSeparator" parent="Panel/TabContainer/Graphics/GraphicsTab/ScreenMode"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="OptionButton" type="OptionButton" parent="Panel/TabContainer/Graphics/GraphicsTab/ScreenMode"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+selected = 0
+item_count = 3
+popup/item_0/text = "Fullscreen"
+popup/item_0/id = 0
+popup/item_1/text = "Windowed"
+popup/item_1/id = 1
+popup/item_2/text = "Borderless"
+popup/item_2/id = 2
+
+[node name="Vsync" type="HBoxContainer" parent="Panel/TabContainer/Graphics/GraphicsTab"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/TabContainer/Graphics/GraphicsTab/Vsync"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Vsync:"
+
+[node name="Seperator" type="HSeparator" parent="Panel/TabContainer/Graphics/GraphicsTab/Vsync"]
+modulate = Color(1, 1, 1, 0)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="OptionButton" type="OptionButton" parent="Panel/TabContainer/Graphics/GraphicsTab/Vsync"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+selected = 1
+item_count = 2
+popup/item_0/text = "On"
+popup/item_0/id = 0
+popup/item_1/text = "Off"
+popup/item_1/id = 1
+
+[node name="Audio" type="TabBar" parent="Panel/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="AudioTab" type="VBoxContainer" parent="Panel/TabContainer/Audio"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 43.0
+offset_top = 22.0
+offset_right = -43.0
+offset_bottom = -22.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Volume" type="HBoxContainer" parent="Panel/TabContainer/Audio/AudioTab"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="Panel/TabContainer/Audio/AudioTab/Volume"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Overall Volume:"
+
+[node name="Seperator" type="HSeparator" parent="Panel/TabContainer/Audio/AudioTab/Volume"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="volume_slider" type="HSlider" parent="Panel/TabContainer/Audio/AudioTab/Volume"]
+layout_mode = 2
+size_flags_horizontal = 3
+value = 49.0
+rounded = true
+
+[node name="Music" type="HBoxContainer" parent="Panel/TabContainer/Audio/AudioTab"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/TabContainer/Audio/AudioTab/Music"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Music:"
+
+[node name="Seperator" type="HSeparator" parent="Panel/TabContainer/Audio/AudioTab/Music"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="volume_slider" type="HSlider" parent="Panel/TabContainer/Audio/AudioTab/Music"]
+layout_mode = 2
+size_flags_horizontal = 3
+value = 49.0
+rounded = true
+
+[node name="SoundEffects" type="HBoxContainer" parent="Panel/TabContainer/Audio/AudioTab"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/TabContainer/Audio/AudioTab/SoundEffects"]
+layout_mode = 2
+size_flags_horizontal = 2
+text = "Sound Effects:"
+
+[node name="Seperator" type="HSeparator" parent="Panel/TabContainer/Audio/AudioTab/SoundEffects"]
+modulate = Color(1, 1, 1, 0)
+layout_direction = 2
+layout_mode = 2
+
+[node name="volume_slider" type="HSlider" parent="Panel/TabContainer/Audio/AudioTab/SoundEffects"]
+layout_mode = 2
+size_flags_horizontal = 3
+value = 49.0
+rounded = true

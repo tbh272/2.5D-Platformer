@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://t5xm64l0epeh"]
+
+[ext_resource type="PackedScene" uid="uid://cgwieywar56rx" path="res://Player/player.tscn" id="1_pbelu"]
+[ext_resource type="PackedScene" uid="uid://c553vda27cyf5" path="res://Scenes/Mesh/test_level.glb" id="2_kycxd"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pbelu"]
+sky_top_color = Color(0.344361, 0.368297, 0.88917, 1)
+sky_horizon_color = Color(0.601414, 0.620441, 0.737363, 1)
+ground_bottom_color = Color(0.138761, 0.190934, 0.13775, 1)
+ground_horizon_color = Color(0.601414, 0.620441, 0.737363, 1)
+
+[sub_resource type="Sky" id="Sky_kycxd"]
+sky_material = SubResource("ProceduralSkyMaterial_pbelu")
+
+[sub_resource type="Environment" id="Environment_pa6j6"]
+background_mode = 2
+sky = SubResource("Sky_kycxd")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="World" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_pa6j6")
+
+[node name="Player" parent="." instance=ExtResource("1_pbelu")]
+
+[node name="test_level" parent="." instance=ExtResource("2_kycxd")]
