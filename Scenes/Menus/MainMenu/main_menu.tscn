@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b81wxa4pq7hk2" path="res://Scenes/Menus/MainMenu/main_menu.gd" id="1_tb3ri"]
 [ext_resource type="Theme" uid="uid://l702hn4avr7u" path="res://Scenes/Menus/menus_theme.tres" id="1_yo6co"]
-[ext_resource type="PackedScene" uid="uid://t5xm64l0epeh" path="res://Scenes/world.tscn" id="2_fy1kh"]
+[ext_resource type="PackedScene" uid="uid://t5xm64l0epeh" path="res://Levels/world.tscn" id="2_fy1kh"]
 [ext_resource type="PackedScene" uid="uid://dwtv5lue5tjp2" path="res://Scenes/Menus/SettingsMenu/settings_menu.tscn" id="4_gphap"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_yo6co"]

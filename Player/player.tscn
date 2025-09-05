@@ -507,9 +507,11 @@ script = ExtResource("1_4ntmi")
 
 [node name="Sprite" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0.660601, 0)
+no_depth_test = true
 texture_filter = 0
+render_priority = 1
 sprite_frames = SubResource("SpriteFrames_b1ygp")
-animation = &"idle_up"
+animation = &"idle_down"
 autoplay = "idle_up"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

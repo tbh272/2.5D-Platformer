@@ -3,11 +3,11 @@ extends CharacterBody3D
 @onready var animated_sprite: AnimatedSprite3D = $Sprite
 @onready var camera: Camera3D = $SpringArm3D/Camera3D
 
-const SPEED: float = 7.0
+const SPEED: float = 8.5
 const JUMP_VELOCITY: float = 4.5
 const DIRECTION_LOCK_TIME: float = 0.1  # Prevent animation jitter
 
-var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
+var gravity: float = 12 ##ProjectSettings.get_setting("physics/3d/default_gravity")
 var last_move_dir: Vector3 = Vector3.FORWARD  # Default for idle
 var last_dir_index: int = 2  # Default to 'up' (index 2)
 var direction_lock_timer: float = 0.0  # Timer to lock direction
